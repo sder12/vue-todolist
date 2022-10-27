@@ -29,8 +29,8 @@
             <div class="ms_input d-flex justify-content-center gap-2">
                 <label for="input-todo" class="d-none">Insert your task</label>
 
-                <input type="text" id="input-todo" placeholder="Add new task ">
-                <button type="button" class="btn btn-dark">Insert</button>
+                <input type="text" id="input-todo" placeholder="Add new task" v-model.trim="userTodo.text">
+                <button type="button" class="btn btn-dark" @click="insertNewTodo">Insert</button>
             </div>
             <!-- List -->
             <div class="ms_list mt-4">
@@ -40,15 +40,10 @@
                         <span :class="todo.done? 'done-bar' : ''">
                             {{todo.text}}
                         </span>
-                        <div class="ms_list-left">
-                            <span>
-                                <i class="fa-solid fa-check"></i>
-                            </span>  
-                            <span class="ms-3" @click="cancelTodo(index)">
-                                <i class="fa-solid fa-xmark"></i>
-                            </span>                          
-                        </div>                       
-                    </li>
+                        <span class="ms-3" @click="cancelTodo(index)">
+                            <i class="fa-solid fa-xmark fa-lg"></i>
+                        </span>
+                   </li>
                 </ul>
                 <div v-else>
                     <h3>Congratulation you did all the tasks!</h3>

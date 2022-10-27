@@ -1,9 +1,13 @@
-const{createApp} = Vue;
+const { createApp } = Vue;
 
 createApp({
-    data: function(){
-        return{
-            todoList : [
+    data: function () {
+        return {
+            userTodo: {
+                text: "",
+                done: false,
+            },
+            todoList: [
                 {
                     text: "Go grocery shopping",
                     done: true,
@@ -23,14 +27,20 @@ createApp({
             ]
         }
     },
-    methods:{
-        cancelTodo(indexTodo){
+    methods: {
+        cancelTodo(indexTodo) {
             this.todoList.splice(this.todoList[indexTodo], 1);
         },
+        insertNewTodo() {
+            if (this.userTodo.text !== "") {
+                this.todoList.push({ ...this.userTodo });
+                this.userTodo.text = "";
+            }
+        }
 
     },
     // Debug
-    created(){
+    created() {
         console.log("vue")
     }
 }).mount("#app");

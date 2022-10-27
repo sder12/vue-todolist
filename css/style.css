@@ -50,9 +50,6 @@ h1{
 }
 
 /* fontawsome */
-.fa-check:hover{
-    color: lightgreen;
-}
 .fa-xmark:hover{
     color: rgb(255, 79, 79);
 }
