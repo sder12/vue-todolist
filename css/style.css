@@ -1,0 +1,58 @@
+body{
+    background-color: lightgray;
+}
+
+.ms_container{
+    background-color: white;
+    width: 50%;
+    margin: 0 auto;
+    text-align: center;
+    padding: 3rem 0;
+    border: 1px solid black;
+    border-radius: 10px;
+}
+/* title */
+h1{
+    font-size: 2rem;
+    font-weight: 800;
+    letter-spacing: .2rem;
+    font-family: Arial, Helvetica, sans-serif;
+    color: rgb(250, 5, 116);
+}
+
+/* Input */
+.ms_input{
+    background-color: rgba(211, 211, 211, 0.555);
+    padding: 1rem 0;
+}
+#input-todo{
+    border-radius: 5px;
+    padding: .3rem 1rem;
+    width: 40%;
+}
+
+/* list */
+.ms_list{
+    width: 70%;
+    margin: 0 auto;
+    cursor: pointer;
+}
+.ms_list ul{
+    list-style-type: none;    
+}
+.ms_list li{    
+    border-bottom: 1px solid black;    
+}
+
+/* checked list item */
+.done-bar{
+    text-decoration: line-through;
+}
+
+/* fontawsome */
+.fa-check:hover{
+    color: lightgreen;
+}
+.fa-xmark:hover{
+    color: rgb(255, 79, 79);
+}
