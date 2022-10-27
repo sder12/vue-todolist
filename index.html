@@ -35,29 +35,20 @@
             <!-- List -->
             <div class="ms_list mt-4">
                 <ul>
-                    <li class="fs-5 pb-2 mb-3 d-flex justify-content-between ps-4 pe-4">
-                        <span>Lista della spesa</span>
-                        <div class="ms_list-left">                            
+                    <li class="fs-5 pb-2 mb-3 d-flex justify-content-between ps-4 pe-4"
+                        v-for="(todo, index) in todoList">
+                        <span :class="todo.done? 'done-bar' : ''">
+                            {{todo.text}}
+                        </span>
+                        <div class="ms_list-left">
                             <span>
-                                <i class="fa-solid fa-check"></i>                                
+                                <i class="fa-solid fa-check"></i>
                             </span>
                             <span class="ms-3">
                                 <i class="fa-solid fa-xmark"></i>
                             </span>
                         </div>
-                    </li>     
-                    <li class="fs-5 pb-2 mb-3 d-flex justify-content-between ps-4 pe-4">
-                        <span class="done-bar">Lista della spesa</span>
-                        <div class="ms_list-left">                            
-                            <span>
-                                <i class="fa-solid fa-check f-m"></i>                                
-                            </span>
-                            <span class="ms-3">
-                                <i class="fa-solid fa-xmark"></i>
-                            </span>
-                        </div>
-                    </li>             
-        
+                    </li>
 
                 </ul>
             </div>
