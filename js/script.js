@@ -29,7 +29,7 @@ createApp({
     },
     methods: {
         cancelTodo(indexTodo) {
-            this.todoList.splice(this.todoList[indexTodo], 1);
+            this.todoList.splice(indexTodo, 1);
         },
         insertNewTodo() {
             if (this.userTodo.text !== "") {
