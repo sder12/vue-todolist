@@ -34,7 +34,7 @@
             </div>
             <!-- List -->
             <div class="ms_list mt-4">
-                <ul>
+                <ul v-if="todoList.length > 0">
                     <li class="fs-5 pb-2 mb-3 d-flex justify-content-between ps-4 pe-4"
                         v-for="(todo, index) in todoList">
                         <span :class="todo.done? 'done-bar' : ''">
@@ -43,14 +43,16 @@
                         <div class="ms_list-left">
                             <span>
                                 <i class="fa-solid fa-check"></i>
-                            </span>
-                            <span class="ms-3">
+                            </span>  
+                            <span class="ms-3" @click="cancelTodo(index)">
                                 <i class="fa-solid fa-xmark"></i>
-                            </span>
-                        </div>
+                            </span>                          
+                        </div>                       
                     </li>
-
                 </ul>
+                <div v-else>
+                    <h3>Congratulation you did all the tasks!</h3>
+                </div>
             </div>
 
         </div>

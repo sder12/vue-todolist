@@ -23,6 +23,12 @@ createApp({
             ]
         }
     },
+    methods:{
+        cancelTodo(indexTodo){
+            this.todoList.splice(this.todoList[indexTodo], 1);
+        },
+
+    },
     // Debug
     created(){
         console.log("vue")
