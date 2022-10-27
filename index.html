@@ -29,7 +29,7 @@
             <div class="ms_input d-flex justify-content-center gap-2">
                 <label for="input-todo" class="d-none">Insert your task</label>
 
-                <input type="text" id="input-todo" placeholder="Add new task" v-model.trim="userTodo.text">
+                <input type="text" id="input-todo" placeholder="Add new task" v-model.trim="userTodo.text" @keyup.enter="insertNewTodo">
                 <button type="button" class="btn btn-dark" @click="insertNewTodo">Insert</button>
             </div>
             <!-- List -->
