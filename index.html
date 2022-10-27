@@ -29,24 +29,32 @@
             <div class="ms_input d-flex justify-content-center gap-2">
                 <label for="input-todo" class="d-none">Insert your task</label>
 
-                <input type="text" id="input-todo" placeholder="Add new task" v-model.trim="userTodo.text" @keyup.enter="insertNewTodo">
+                <input type="text" id="input-todo" placeholder="Add new task" v-model.trim="userTodo.text"
+                    @keyup.enter="insertNewTodo">
                 <button type="button" class="btn btn-dark" @click="insertNewTodo">Insert</button>
             </div>
             <!-- List -->
-            <div class="ms_list mt-4">
+            <div class="ms_list mt-4">                
+                <!-- Undone task  -->
                 <ul v-if="todoList.length > 0">
-                    <li class="fs-5 pb-2 mb-3 d-flex justify-content-between ps-4 pe-4"
+                    <li class="fs-5 pb-2 mb-3 d-flex justify-content-between ps-1 pe-4"
                         v-for="(todo, index) in todoList">
-                        <span :class="todo.done? 'done-bar' : ''">
+                        <span :class="todo.done? 'done-bar' : ''" @click="doneUndone(index)">
+                            <span class="me-2" :class="todo.done? '': 'opacity-0'">            
+                                <i class="fa-solid fa-check"></i>
+                            </span>
                             {{todo.text}}
                         </span>
                         <span class="ms-3" @click="cancelTodo(index)">
                             <i class="fa-solid fa-xmark fa-lg"></i>
                         </span>
-                   </li>
+                    </li>
                 </ul>
+                <!-- Done all the Task  -->
                 <div v-else>
-                    <h3>Congratulation you did all the tasks!</h3>
+                    <h3 class="text-uppercase pt-3">Congratulation</h3>
+                    <i class="fa-regular fa-face-smile"></i>                    
+                    <h4 class="pt-1"> You did all the tasks!</h4>
                 </div>
             </div>
 

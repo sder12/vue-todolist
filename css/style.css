@@ -50,6 +50,13 @@ h1{
 }
 
 /* fontawsome */
-.fa-xmark:hover{
-    color: rgb(255, 79, 79);
+.fa-xmark{
+   color: rgb(255, 79, 79);
+}
+.fa-check{
+    color: lightgreen;
+}
+.fa-face-smile{
+    font-size: 4rem;
+    margin: 1rem 0 ;
 }

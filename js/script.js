@@ -36,8 +36,10 @@ createApp({
                 this.todoList.push({ ...this.userTodo });
                 this.userTodo.text = "";
             }
+        },
+        doneUndone(indexTodo){
+            this.todoList[indexTodo].done = !this.todoList[indexTodo].done
         }
-
     },
     // Debug
     created() {
